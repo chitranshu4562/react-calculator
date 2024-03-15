@@ -8,3 +8,7 @@
 .resultButton {
     background-color: #6a6aee;
 }
+
+.containerHeight {
+    min-height: 54px;
+}

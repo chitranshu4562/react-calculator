@@ -19,3 +19,4 @@ export const LEFT_PARENTHESIS = '(';
 export const RIGHT_PARENTHESIS = ')';
 export const CLEAR_ALL = 'AC';
 export const DECIMAL = '.';
+export const CROSS = 'X';

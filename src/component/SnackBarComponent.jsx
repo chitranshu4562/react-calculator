@@ -1,7 +1,6 @@
 import {useContext, useState} from "react";
 import {Button, IconButton, Slide, Snackbar} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
-import Fade from '@mui/material/Fade';
 import SnackBarContext from "../SnackBarContext";
 
 const SnackBarComponent = () => {

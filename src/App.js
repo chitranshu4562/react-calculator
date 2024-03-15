@@ -3,7 +3,6 @@ import Calculator from "./Calculator";
 import SnackBarComponent from "./component/SnackBarComponent";
 import {useState} from "react";
 import SnackBarContext from "./SnackBarContext";
-import {Button} from "@mui/material";
 
 function App() {
     const [snackBar, setSnackBar] = useState({
