@@ -20,12 +20,10 @@ function App() {
             message: message
         })
     }
-    console.log('Snack bar state: ', snackBar)
     return (
         <>
             <SnackBarContext.Provider value={{snackBar, handleSnackBar}}>
                 <SnackBarComponent/>
-                <Button onClick={() => handleSnackBar(true, 'Opening snack bar from button')} variant="contained">open snackBar</Button>
                 <Calculator/>
             </SnackBarContext.Provider>
         </>

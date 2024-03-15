@@ -11,7 +11,7 @@ const SnackBarComponent = () => {
         return <Slide {...props} direction={snackBarContext.snackBar.direction}/>
     }
 
-    const [state, setState] = useState({
+    const [state] = useState({
         Transition: SlideTransition
     });
 
