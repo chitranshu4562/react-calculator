@@ -27,7 +27,6 @@ const Calculator = () => {
 
     return (
         <div className={`container ${classes.contentBox}`}>
-            <SnackBarComponent/>
             <Container>
                 <p className="d-flex justify-content-end align-items-center">Output: {result}</p>
             </Container>

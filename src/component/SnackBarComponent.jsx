@@ -1,38 +1,25 @@
-import {useState} from "react";
+import {useContext, useState} from "react";
 import {Button, IconButton, Slide, Snackbar} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import Fade from '@mui/material/Fade';
+import SnackBarContext from "../SnackBarContext";
 
-const SnackBarComponent = ({
-                               duration = 5000,
-                               message = 'Snack bar is opened',
-                               direction = 'right'
-                           }) => {
+const SnackBarComponent = () => {
+
+    const snackBarContext = useContext(SnackBarContext);
+    const SlideTransition = (props) => {
+        return <Slide {...props} direction={snackBarContext.snackBar.direction}/>
+    }
 
     const [state, setState] = useState({
-        open: false,
-        Transition: Fade
+        Transition: SlideTransition
     });
-
-    const SlideTransition = (props) => {
-        return <Slide {...props} direction={direction}/>
-    }
-
-    const handleClick = (Transition) => {
-        setState({
-            open: true,
-            Transition,
-        });
-    }
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {
             return;
         }
-        setState({
-            ...state,
-            open: false
-        });
+        snackBarContext.handleSnackBar(false);
     }
 
     const action = (
@@ -49,13 +36,12 @@ const SnackBarComponent = ({
 
     return (
         <div>
-            <Button onClick={() => handleClick(SlideTransition)}>Open SnackBar</Button>
             <Snackbar
-                open={state.open}
-                autoHideDuration={duration}
+                open={snackBarContext.snackBar.open}
+                autoHideDuration={snackBarContext.snackBar.duration}
                 TransitionComponent={state.Transition}
                 onClose={handleClose}
-                message={message}
+                message={snackBarContext.snackBar.message}
                 key={state.Transition.name}
                 action={action}/>
         </div>
